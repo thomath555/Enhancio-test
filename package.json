@@ -16,7 +16,8 @@
     "react-sortable-hoc": "^1.11.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "array-move": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
