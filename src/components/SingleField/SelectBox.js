@@ -4,7 +4,7 @@ import './single-field.scss'
 import ToggleButton from './ToggleButton'
 import styled from 'styled-components'
 /* --------------------------------------------- */
-const SelectBox = ({ fieldName, mandatory, removeItemHandler, isRecycleBin,isMultipleSection, expectedValues = [], isStandardField, index }) => {
+const SelectBox = ({ fieldName, mandatory, removeItemHandler, isRecycleBin,isMultipleSection, expectedValues = [], index }) => {
     /* --------------------------------------------- */
     const [inputValue, updateInputValue] = useState('')
     const [mutiSelecionInputValue, updateMutiSelecionInputValue] = useState([])
@@ -38,7 +38,7 @@ const SelectBox = ({ fieldName, mandatory, removeItemHandler, isRecycleBin,isMul
                 <img alt='close-btn' src='./icons/close.png' />
             </div>
             <p className='single-item___header-counter'>{index < 9 ? `0${index + 1}` : index + 1}</p>
-            <ToggleButton {...{ index, mandatory, isStandardField }} />
+            <ToggleButton {...{ index, mandatory, isRecycleBin }} />
         </div>
         <div className='single-item___input'>
             <div className='select-box-value'>{isMultipleSection ? mutiSelecionInputValue.toString() :inputValue}</div>

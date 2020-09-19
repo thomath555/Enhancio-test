@@ -4,7 +4,7 @@ import './single-field.scss'
 import ToggleButton from './ToggleButton'
 import styled from 'styled-components'
 /* --------------------------------------------- */
-const TextBox = ({ fieldName, mandatory,removeItemHandler,isRecycleBin,  isStandardField, index }) => {
+const TextBox = ({ fieldName, mandatory,removeItemHandler,isRecycleBin, index }) => {
     /* --------------------------------------------- */
     const [inputValue, updateInputValue] = useState('') 
     /* --------------------------------------------- */
@@ -22,7 +22,7 @@ const TextBox = ({ fieldName, mandatory,removeItemHandler,isRecycleBin,  isStand
                 <img alt='close-btn' src='./icons/close.png' />
             </div>
             <p className='single-item___header-counter'>{index < 9 ? `0${index + 1}` : index + 1}</p>
-            <ToggleButton {...{ index, mandatory, isStandardField }} />
+            <ToggleButton {...{ index, mandatory, isRecycleBin }} />
         </div>
         <div className='single-item___input'>
             <input type='text' onChange={onChangeHandler} value={inputValue} />

@@ -12,7 +12,7 @@ const DragHandle = sortableHandle(() => <span>::</span>);
 const SortableItem = sortableElement(({ item, test, isRecycleBin, removeItemHandler }) => (
     <div className = 'single-list-item'>
         <DragHandle />
-        <SingleField {...{ ...item, index: test, isRecycleBin, removeItemHandler, isStandardField: true }} />
+        <SingleField {...{ ...item, index: test, isRecycleBin, removeItemHandler }} />
     </div>
 ));
 
