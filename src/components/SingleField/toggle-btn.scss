@@ -1,0 +1,76 @@
+.toggle-btn {
+}
+
+
+.tgl {
+	display: none;
+  
+	// add default box-sizing for this scope
+	&,
+  &:after,
+  &:before,
+	& *,
+  & *:after,
+  & *:before,
+	& + .tgl-btn {
+		box-sizing: border-box;
+		&::selection {
+			background: none;
+		}
+	}
+  
+	+ .tgl-btn {
+		outline: 0;
+		display: block;
+        width: 45px;
+        height: 20px;
+		position: relative;
+		cursor: pointer;
+    user-select: none;
+		&:after,
+    &:before {
+			position: relative;
+			display: block;
+			content: "";
+            width: 12px;
+            height: 12px;
+		}
+    
+		&:after {
+			left: 0;
+		}
+    
+		&:before {
+			display: none;
+		}
+	}
+  
+	&:checked + .tgl-btn:after {
+		left: 69%;
+	}
+}
+
+
+.tgl-flat {
+	+ .tgl-btn {
+		padding: 2px;
+		transition: all .2s ease;
+		background: #fff;
+		border: 2px solid #636466;
+		border-radius: 2em;
+		&:after {
+			transition: all .2s ease;
+			background: #636466;
+			content: "";
+			border-radius: 1em;
+		}
+	}
+  
+	&:checked + .tgl-btn {
+    border: 2px solid #5ebe89;
+    &:after {
+      left: 69%;
+      background: #5ebe89;
+    }
+  }
+}
