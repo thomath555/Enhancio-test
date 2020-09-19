@@ -10,14 +10,14 @@ import arrayMove from 'array-move';
 const DragHandle = sortableHandle(() => <span>::</span>);
 
 const SortableItem = sortableElement(({ item, test, isRecycleBin, removeItemHandler }) => (
-    <li>
+    <div className = 'single-list-item'>
         <DragHandle />
         <SingleField {...{ ...item, index: test, isRecycleBin, removeItemHandler, isStandardField: true }} />
-    </li>
+    </div>
 ));
 
 const SortableContainer = sortableContainer(({ children }) => {
-    return <ul className = 'filed-wrapper'>{children}</ul>;
+    return <div className = 'filed-wrapper'>{children}</div>;
 });
 
 const FieldWrapper = ({ fields = [], isRecycleBin, removeItemHandler }) => {
@@ -32,7 +32,7 @@ const FieldWrapper = ({ fields = [], isRecycleBin, removeItemHandler }) => {
         setItem(newItems);
     };
     return (
-        <SortableContainer onSortEnd={onSortEnd} useDragHandle axis = 'xy'>
+        <SortableContainer onSortEnd={onSortEnd} useDragHandle axis = 'xy' helperClass = 'tester'>
             {items.map((item, index) => {
                 console.log(index)
                return <SortableItem key={`item-${index}`} {...{ item, test:index, index, isRecycleBin, removeItemHandler }} />
